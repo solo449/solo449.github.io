@@ -1,22 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Texting Website</title>
+	<title>My Forum</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Texting Website</h1>
-	
-	<form>
-		<label for="to">To:</label>
-		<input type="text" id="to" name="to" required>
-		
-		<label for="message">Message:</label>
-		<textarea id="message" name="message" required></textarea>
-		
-		<button type="submit">Send</button>
-	</form>
-	
-	<script>
-		// add JavaScript code here to handle the form submission and send the message
-	</script>
+	<header>
+		<h1>Welcome to My Forum</h1>
+	</header>
+	<main>
+		<section>
+			<h2>Discussion Board</h2>
+			<p>Join the conversation and post your thoughts below.</p>
+			<form>
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username">
+				<label for="message">Message:</label>
+				<textarea id="message" name="message"></textarea>
+				<button type="submit">Post</button>
+			</form>
+			<ul id="messages">
+				<!-- messages will be added here dynamically using JavaScript -->
+			</ul>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; My Forum 2023</p>
+	</footer>
+	<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Texting Website</title>
+</head>
+<body>
+	<h1>Texting Website</h1>
+	
+	<form>
+		<label for="to">To:</label>
+		<input type="text" id="to" name="to" required>
+		
+		<label for="message">Message:</label>
+		<textarea id="message" name="message" required></textarea>
+		
+		<button type="submit">Send</button>
+	</form>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.12/dist/sweetalert2.min.js"></script>
+	<script>
+		// add JavaScript code here to handle the form submission and send the message
+		$(document).ready(function() {
+			$('form').submit(function(event) {
+				event.preventDefault();
+				var to = $('#to').val();
+				var message = $('#message').val();
+				$.ajax({
+					type: 'POST',
+					url: 'send_message.php', // replace with the URL of your server-side script
+					data: {
+						to: to,
+						message: message
+					},
+					dataType: 'json',
+					success: function(response) {
+						if (response.success) {
+							// show a success message using the SweetAlert2 library
+							Swal.fire({
+								icon: 'success',
+								title: 'Message Sent',
+								text: 'Your message has been sent successfully!'
+							});
+						} else {
+							// show an error message using the SweetAlert2 library
+							Swal.fire({
+								icon: 'error',
+								title: 'Message Failed',
+								text: response.message
+							});
+						}
+					},
+					error: function(xhr, status, error) {
+						// show an error message using the SweetAlert2 library
+						Swal.fire({
+							icon: 'error',
+							title: 'Message Failed',
+							text: 'An error occurred while sending your message. Please try again later.'
+						});
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

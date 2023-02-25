@@ -1,57 +1,50 @@
-body {
-	font-family: sans-serif;
-	margin: 0;
-	padding: 0;
+.comments {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-header, footer {
-	background-color: #333;
-	color: #fff;
-	padding: 1em;
+.comments h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-main {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 1em;
+.comments form {
+  display: flex;
+  flex-direction: column;
 }
 
-section {
-	margin-bottom: 2em;
+.comments label {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-form label {
-	display: block;
-	margin-bottom: 0.5em;
+.comments input,
+.comments textarea {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-form input[type="text"],
-form textarea {
-	display: block;
-	width: 100%;
-	padding: 0.5em;
-	margin-bottom: 1em;
+.comments button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
 }
 
-form button {
-	background-color: #333;
-	color: #fff;
-	padding: 0.5em 1em;
-	border: none;
-	cursor: pointer;
+.comments button:hover {
+  cursor: pointer;
+  background-color: #0062cc;
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-li {
-	margin-bottom: 1em;
-	padding: 1em;
-	background-color: #f7f7f7;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+.comments li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
